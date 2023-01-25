@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ProjectBIN</string>
+
+    <string name="brand"><u>BRAND</u></string>
+    <string name="scheme"><u>SCHEME</u></string>
+    <string name="Logo">BIN STORY</string>
+    <string name="author">By V.K.Chepusov</string>
+    <string name="bank"><u>BANK</u></string>
+    <string name="country"><u>COUNTRY</u></string>
+    <string name="luhn"><u>LUHN</u></string>
+    <string name="length"><u>LENGTH</u></string>
+    <string name="card_number"><u>CARD NUMBER</u></string>
+    <string name="prepaid"><u>PREPAID</u></string>
+    <string name="type"><u>TYPE</u></string>
+
+
+    <string name="EB">Entered BIN</string>
+    <string name="enter_the_bank_card_s_bin">Enter the bank card\'s BIN</string>
+
 </resources>

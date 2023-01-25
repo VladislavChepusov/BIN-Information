@@ -21,33 +21,34 @@
         app:layout_constraintTop_toBottomOf="@+id/binField"
         app:layout_constraintVertical_bias="0.060000002" />
 
-    <Button
-        android:id="@+id/sendBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/noto"
-        android:text="Send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/binField"
-        app:layout_constraintTop_toTopOf="@+id/binField"
-        app:layout_constraintVertical_bias="0.0" />
-
     <EditText
         android:id="@+id/binField"
         android:layout_width="270dp"
         android:layout_height="45dp"
         android:ems="10"
         android:fontFamily="@font/noto"
-        android:hint="Enter the bank card's BIN"
+        android:hint="@string/enter_the_bank_card_s_bin"
         android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.058" />
+
+    <ImageButton
+        android:id="@+id/sendBtn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/Back"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/binField"
+        app:layout_constraintTop_toTopOf="@+id/binField"
+        app:srcCompat="@drawable/search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,32 +1,36 @@
 package com.example.projectbin.data
 
+import androidx.annotation.Nullable
+
+var NullText = "No Info"
 data class NumberType(
-    val length: String? = null,
-    val luhn: String? = null,
+    val length: String = NullText,
+    val luhn: Boolean? = null,
 )
 
 data class CountryType  (
-    val numeric: String? = null,
-    val alpha2: String? = null,
+    val numeric: String = NullText,
+    val alpha2: String? = NullText,
+    val name: String? = NullText,
     val emoji: String? = null,
-    val currency: String? = null,
-    val latitude: String? = null,
-    val longitude: String? = null,
+    val currency: String? = NullText,
+    val latitude: String? = NullText,
+    val longitude: String? = NullText,
 )
 
 data class BankType(
-    val name: String? = null,
-    val url: String? = null,
-    val phone: String? = null,
-    val city: String? = null,
+    val name: String? = NullText,
+    val url: String? = NullText,
+    val phone: String? = NullText,
+    val city: String? = NullText,
 )
 
 data class APIModel(
     val number: NumberType? = null,
-    val scheme: String? = null,
-    val type: String? = null,
-    val brand: String? = null,
-    val prepaid: String? = null,
+    val scheme: String? = NullText,
+    val type: String? = NullText,
+    val brand: String = NullText,
+    val prepaid: Boolean? = null,
     val country: CountryType? = null,
     val bank: BankType? = null,
     )
