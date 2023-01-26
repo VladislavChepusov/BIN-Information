@@ -1,9 +1,19 @@
 package com.example.projectbin
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.text.Editable
+import android.util.Log
+import android.view.View
+import androidx.core.content.ContextCompat.startActivity
+import com.android.volley.Request
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 
 
 object Support {
@@ -30,5 +40,8 @@ object Support {
             return networkInfo.isConnected
         }
     }
+
+
+
 
 }

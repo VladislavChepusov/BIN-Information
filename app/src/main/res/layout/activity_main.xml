@@ -12,37 +12,36 @@
         android:id="@+id/messageTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/noto"
         android:textColor="@color/design_default_color_error"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/binField"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintTop_toBottomOf="@+id/binField" />
 
     <EditText
         android:id="@+id/binField"
         android:layout_width="270dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:fontFamily="@font/noto"
         android:hint="@string/enter_the_bank_card_s_bin"
         android:inputType="numberSigned"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/sendBtn"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:background="@color/Back"
+        android:contentDescription="Go"
         android:foreground="?android:attr/selectableItemBackground"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,5 +49,42 @@
         app:layout_constraintStart_toEndOf="@+id/binField"
         app:layout_constraintTop_toTopOf="@+id/binField"
         app:srcCompat="@drawable/search" />
+
+    <FrameLayout
+        android:id="@+id/placeholderFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageTv">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onItemClick" />
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/ClearBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/Back"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="trash"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderFragment"
+        app:srcCompat="@drawable/baseline_restore_from_trash_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
