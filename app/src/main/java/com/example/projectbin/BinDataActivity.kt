@@ -2,6 +2,7 @@ package com.example.projectbin
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Html
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,15 @@ class BinDataActivity : AppCompatActivity() {
         if (data != null) {
             parserData = parserBinData(data)
             completion(parserData)
+
+            if (parserData.country?.latitude != null && parserData.country.longitude != NullText) {
+                bindingBinData.coordinatesTv.setOnClickListener {
+                    val url = "geo:${parserData.country.latitude},${parserData.country.longitude}" +
+                            "?z=22&q=${parserData.country.latitude},${parserData.country.longitude}"
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(intent)
+                }
+            }
         }
         setContentView(bindingBinData.root)
         bindingBinData.backBtn.setOnClickListener {
