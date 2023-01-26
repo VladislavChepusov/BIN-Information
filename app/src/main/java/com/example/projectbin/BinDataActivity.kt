@@ -53,7 +53,7 @@ class BinDataActivity : AppCompatActivity() {
         if (Data.number?.luhn == null) {
             bindingBinData.luhnTv.text = NullText
         } else {
-            if (Data.number?.luhn == true)
+            if (Data.number.luhn == true)
                 bindingBinData.luhnTv.text =
                     Html.fromHtml("<font color=\"#4D4D4D\"><b>Yes</b></font> / No")
             else
@@ -75,8 +75,6 @@ class BinDataActivity : AppCompatActivity() {
     }
 
     private fun parserBinData(Data: String): APIModel {
-        //val gson = GsonBuilder().create()
-        //val resultData: APIModel = gson.fromJson(Data, APIModel::class.java)
         return GsonBuilder().create().fromJson(Data, APIModel::class.java)
     }
 

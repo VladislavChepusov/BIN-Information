@@ -6,10 +6,7 @@ import android.net.NetworkCapabilities
 import android.os.Build
 
 
-
-
-object  Support {
-
+object Support {
     fun checkForInternet(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -33,8 +30,5 @@ object  Support {
             return networkInfo.isConnected
         }
     }
-
-
-
 
 }
