@@ -81,12 +81,9 @@ class BinDataActivity : AppCompatActivity() {
                 bindingBinData.prepaidTv.text =
                     Html.fromHtml("Yes /  <font color=\"#4D4D4D\"><b>No</b></font>")
         }
-
     }
 
     private fun parserBinData(Data: String): APIModel {
         return GsonBuilder().create().fromJson(Data, APIModel::class.java)
     }
-
-
 }

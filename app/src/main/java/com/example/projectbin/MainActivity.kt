@@ -9,7 +9,6 @@ import android.text.Editable
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
-import android.widget.AdapterView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -27,7 +26,6 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
 
     @SuppressLint("MissingInflatedId", "SetTextI18n", "CommitTransaction")
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         pref = getSharedPreferences("MyTable", Context.MODE_PRIVATE)
@@ -49,7 +47,6 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
                 else -> false
             }
         }
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -68,7 +65,6 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
             bindingMain.messageTv.text = "There is no internet connection"
         }
     }
-
 
     private fun dataActivity(Data: String, Bin: Editable) {
         // создание объекта Intent для запуска SecondActivity
@@ -102,7 +98,7 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
         val editor = pref?.edit()
         val binList: HashSet<String> = pref?.getStringSet("binList", HashSet()) as HashSet<String>
         binList.add(bin.toString())
-        editor?.clear();
+        editor?.clear()
         editor?.putStringSet("binList", binList)
         editor?.apply()
     }
@@ -123,7 +119,13 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
         adapter.dataSynchronization(HashSet())
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onClick(data: String) {
-        requestProcessing(Editable.Factory.getInstance().newEditable(data))
+        if (Support.checkForInternet(this)) {
+            requestProcessing(Editable.Factory.getInstance().newEditable(data))
+        } else {
+            Toast.makeText(this, "There is no internet connection", Toast.LENGTH_SHORT).show()
+            bindingMain.messageTv.text = "There is no internet connection"
+        }
     }
 }

@@ -1,6 +1,5 @@
 package com.example.projectbin.data
 
-import androidx.annotation.Nullable
 
 var NullText = "No Info"
 data class NumberType(
