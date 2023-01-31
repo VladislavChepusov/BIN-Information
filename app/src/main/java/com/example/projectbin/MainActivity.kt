@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         pref = getSharedPreferences("MyTable", Context.MODE_PRIVATE)
         val binList: HashSet<String> = pref?.getStringSet("binList", HashSet()) as HashSet<String>
-        
+
         init(binList)
         setContentView(bindingMain.root)
 

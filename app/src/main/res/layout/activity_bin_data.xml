@@ -12,6 +12,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginTop="5dp"
         android:background="@color/Back"
         android:contentDescription="TODO"
         android:foreground="?android:attr/selectableItemBackground"
@@ -19,8 +20,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
         app:srcCompat="@drawable/back_arrow" />
@@ -29,15 +30,17 @@
         android:id="@+id/NumTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/noto"
+        android:gravity="center"
         android:text="1234 5678"
-        android:textSize="24sp"
+        android:textSize="19sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/SV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.389"
-        app:layout_constraintStart_toEndOf="@+id/backBtn"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ScrollView
         android:id="@+id/SV"
@@ -404,13 +407,13 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:fontFamily="@font/noto"
-                android:text="Gorod"
-                android:textSize="19dp"
-
-                android:textColorLink="@color/MyGray"
-                android:linksClickable="true"
                 android:autoLink="map"
+                android:fontFamily="@font/noto"
+                android:linksClickable="true"
+
+                android:text="Gorod"
+                android:textColorLink="@color/MyGray"
+                android:textSize="19dp"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -419,5 +422,21 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/noto"
+        android:text="@string/bin"
+        android:textColor="@color/Sea"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/SV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/backBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

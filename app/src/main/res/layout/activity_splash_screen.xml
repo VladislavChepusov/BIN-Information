@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19999999"
-        app:srcCompat="@drawable/mylogo" />
+        app:srcCompat="@drawable/mylogo_vect" />
 
     <TextView
         android:id="@+id/textView"
@@ -58,6 +58,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/noto"
         android:text="@string/author"
         android:textSize="16sp"

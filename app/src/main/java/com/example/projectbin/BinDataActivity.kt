@@ -23,7 +23,7 @@ class BinDataActivity : AppCompatActivity() {
         bindingBinData = ActivityBinDataBinding.inflate(layoutInflater)
         val data = intent.getStringExtra("Data")
         val bin = intent.getStringExtra("Bin")
-        bindingBinData.NumTv.text = "BIN: $bin"
+        bindingBinData.NumTv.text = "$bin"
 
         val parserData: APIModel
         if (data != null) {

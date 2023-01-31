@@ -18,5 +18,6 @@
     <string name="enter_the_bank_card_s_bin">Enter the bank card\'s BIN</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bin"><u>BIN</u></string>
 
 </resources>
